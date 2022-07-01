@@ -23,7 +23,23 @@ void FillArray(string[] collection)
     }
 }
 
+void PrintArray(string[] col)
+{
+    Console.Write("[");
+    for (int i = 0; i < col.Length; i++)
+    {
+        Console.Write(col[i]);
+        if (i != col.Length - 1)
+        {
+            Console.Write(", ");
+        }
+    }
+    Console.Write($"]");
+}
+
 Console.Write("Задайте размер массива: ");
 
 int sizeArray = Convert.ToInt32(Console.ReadLine());
 string[] array = new string[sizeArray];
+FillArray(array);
+PrintArray(array);
