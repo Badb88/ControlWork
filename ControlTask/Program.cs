@@ -37,9 +37,37 @@ void PrintArray(string[] col)
     Console.Write($"]");
 }
 
+string[] FindSymbol(string[] threeSymbol)
+{
+    int count = 0;
+    string symbol = String.Empty;
+    for (int i = 0; i < threeSymbol.Length; i++)
+    {
+        symbol = threeSymbol[i];
+        if (symbol.Length <= 3)
+        {
+            count++;
+        }
+    }
+    string[] array2 = new string[count];
+    count = 0;
+    for (int i = 0; i < threeSymbol.Length; i++)
+    {
+        symbol = threeSymbol[i];
+        if (symbol.Length <= 3)
+        {
+            array2[count] = symbol;
+            count++;
+        }
+    }
+    return array2;
+}
+
 Console.Write("Задайте размер массива: ");
 
 int sizeArray = Convert.ToInt32(Console.ReadLine());
 string[] array = new string[sizeArray];
 FillArray(array);
 PrintArray(array);
+string[] array2 = FindSymbol(array);
+PrintArray(array2);
