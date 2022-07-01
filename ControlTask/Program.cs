@@ -63,11 +63,16 @@ string[] FindSymbol(string[] threeSymbol)
     return array2;
 }
 
+Console.WriteLine();
 Console.Write("Задайте размер массива: ");
 
 int sizeArray = Convert.ToInt32(Console.ReadLine());
 string[] array = new string[sizeArray];
+Console.WriteLine();
 FillArray(array);
+Console.WriteLine();
 PrintArray(array);
+Console.Write(" -> ");
 string[] array2 = FindSymbol(array);
 PrintArray(array2);
+Console.WriteLine();
